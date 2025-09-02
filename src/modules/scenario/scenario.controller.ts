@@ -19,7 +19,7 @@ export class ScenarioController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.scenarioService.findOne(+id);
+    return this.scenarioService.findOne(id);
   }
 
   @Patch(':id')
