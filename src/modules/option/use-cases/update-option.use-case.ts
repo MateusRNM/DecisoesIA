@@ -8,8 +8,8 @@ export class UpdateOptionUseCase {
 
     async execute(id: string, dto: UpdateOptionDto){
         try {
-            const scenario = await this.updateOptionRepository.update(id, dto);
-            return scenario;
+            const option = await this.updateOptionRepository.update(id, dto);
+            return option;
         } catch(error) {
             this.logger.error(error);
             throw error;

@@ -7,7 +7,7 @@ export class CreateOptionRepository {
     constructor(private readonly prisma : PrismaService) {}
 
     async create(data: CreateOptionDto) {
-        const scenario = await this.prisma.option.create({data});
-        return scenario;
+        const option = await this.prisma.option.create({data});
+        return option;
     }
 }   

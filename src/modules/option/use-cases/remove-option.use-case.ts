@@ -7,8 +7,8 @@ export class RemoveOptionUseCase {
 
     async execute(id: string){
         try {
-            const scenario = await this.removeOptionRepository.remove(id);
-            return scenario;
+            const option = await this.removeOptionRepository.remove(id);
+            return option;
         } catch(error) {
             this.logger.error(error);
             throw error;

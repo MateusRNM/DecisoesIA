@@ -8,8 +8,8 @@ export class CreateOptionUseCase {
 
     async execute(data: CreateOptionDto) {
         try {
-            const scenario = await this.optionRepository.create(data);
-            return scenario;
+            const option = await this.optionRepository.create(data);
+            return option;
         } catch(error) {
             this.logger.error(error);
             throw error;

@@ -7,8 +7,8 @@ export class FindOneOptionUseCase {
 
     async execute(id: string){
         try {
-            const scenario = await this.findOneOptionRepository.getOne(id);
-            return scenario;
+            const option = await this.findOneOptionRepository.getOne(id);
+            return option;
         } catch(error){
             this.logger.error(error);
             throw error;

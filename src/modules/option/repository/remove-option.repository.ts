@@ -6,7 +6,7 @@ export class RemoveOptionRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async remove(id: string){
-        const scenario = await this.prisma.option.delete({ where: { id: id } });
-        return scenario;
+        const option = await this.prisma.option.delete({ where: { id: id } });
+        return option;
     }
 }

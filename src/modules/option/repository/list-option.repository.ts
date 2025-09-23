@@ -6,7 +6,7 @@ export class ListOptionRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async list() {
-        const scenario = await this.prisma.option.findMany();
-        return scenario;
+        const option = await this.prisma.option.findMany();
+        return option;
     }
 }

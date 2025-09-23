@@ -7,8 +7,8 @@ export class ListOptionRepositoryUseCase {
 
     async execute() {
         try {
-            const scenario = await this.optionRepository.list();
-            return scenario;
+            const option = await this.optionRepository.list();
+            return option;
         } catch(error) {
             this.logger.error(error);
             throw error;
