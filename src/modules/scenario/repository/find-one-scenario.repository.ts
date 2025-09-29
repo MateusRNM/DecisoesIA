@@ -6,7 +6,12 @@ export class FindOneScenarioRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async getOne(id: string){
-        const scenario = await this.prisma.scenario.findUnique({ where: { id: id }});
+        const scenario = await this.prisma.scenario.findUnique({ 
+            where: { id: id },
+            include: {
+                options: true
+            }
+        });
         return scenario;
     }
 }
