@@ -6,9 +6,9 @@ import { CreateOptionDto } from "../dto/create-option.dto";
 export class CreateOptionUseCase {
     constructor(private readonly optionRepository: CreateOptionRepository, private readonly logger: Logger) {}
 
-    async execute(data: CreateOptionDto) {
+    async execute(scenarioId: string, data: CreateOptionDto) {
         try {
-            const option = await this.optionRepository.create(data);
+            const option = await this.optionRepository.create(scenarioId, data);
             return option;
         } catch(error) {
             this.logger.error(error);

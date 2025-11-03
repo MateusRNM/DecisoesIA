@@ -5,9 +5,9 @@ import { ListOptionRepository } from "../repository";
 export class ListOptionRepositoryUseCase {
     constructor(private readonly optionRepository: ListOptionRepository, private readonly logger: Logger) {}
 
-    async execute() {
+    async execute(scenarioId: string) {
         try {
-            const option = await this.optionRepository.list();
+            const option = await this.optionRepository.list(scenarioId);
             return option;
         } catch(error) {
             this.logger.error(error);

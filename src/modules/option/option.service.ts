@@ -14,12 +14,12 @@ export class OptionService {
     private readonly updateOptionUseCase: UpdateOptionUseCase
   ) {}
 
-  create(createOptionDto: CreateOptionDto) {
-    return this.createOptionUseCase.execute(createOptionDto);
+  create(scenarioId: string, createOptionDto: CreateOptionDto) {
+    return this.createOptionUseCase.execute(scenarioId, createOptionDto);
   }
 
-  findAll() {
-    return this.listOptionUseCase.execute();
+  findAll(scenarioId: string) {
+    return this.listOptionUseCase.execute(scenarioId);
   }
 
   findOne(id: string) {

@@ -5,8 +5,13 @@ import { PrismaService } from "src/shared/databases/prisma.database";
 export class ListOptionRepository {
     constructor(private readonly prisma: PrismaService) {}
 
-    async list() {
-        const option = await this.prisma.option.findMany({ include: { scenario: true } });
+    async list(scenarioId: string) {
+        const option = await this.prisma.option.findMany({ where: {
+            scenarioId: scenarioId
+        }, 
+        include: { 
+            scenario: true 
+        }});
         return option;
     }
 }
